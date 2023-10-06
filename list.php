@@ -18,7 +18,7 @@ if (!isset($_SESSION['logged_id'])) {
     $user = $loginQuery->fetch();
 
     if (!$user || !password_verify($password, $user['password'])) {
-        $_SESSION['user_err'] = true;
+        $_SESSION['user_err'] = $login;
         header('Location: admin.php');
         exit();
     }

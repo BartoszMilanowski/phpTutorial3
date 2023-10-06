@@ -19,6 +19,12 @@ session_start();
                 unset($_SESSION['wrong_email']);
             } ?><br /><br />
         </label>
+        <?php
+        if(isset($_SESSION['email_exist'])){
+            echo "<div>Podany adres e-mail jest już zapisany w naszej bazie.</div>";
+            unset($_SESSION['email_exist']);
+        }
+        ?>
         <input type="submit" value="Zapisz się">
     </form>
 
